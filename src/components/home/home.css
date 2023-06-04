@@ -1,0 +1,10 @@
+.Home {
+    background-color: var(--linkedIn-color);
+    height: 100vh;
+  }
+  
+  .Home__body {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 5rem;
+  }

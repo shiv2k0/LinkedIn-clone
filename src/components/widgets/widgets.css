@@ -1,0 +1,61 @@
+.widgets {
+    flex: 0.2;
+    display: flex;
+    /* justify-content: space-between; */
+    min-width: 300px;
+    /* position: sticky;
+    top: 80px; */
+    background-color: white;
+    flex-direction: column;
+    height: fit-content;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    /* align-items: center; */
+  }
+  
+  .widgets_top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0.8rem;
+    justify-content: space-between;
+  }
+  
+  .widgets_top h3 {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  .widgets__lists {
+    position: relative;
+    left: 30px;
+    list-style: disc;
+  }
+  .widgets__list {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .widgets__list p {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  .time_reader {
+    color: rgb(122, 122, 122);
+    font-weight: 300;
+    font-size: 13px;
+  }
+  
+  .widget__more {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    font-weight: 500;
+    color: gray;
+  }
+  
+  .widget__more:hover {
+    font-weight: 600;
+    cursor: pointer;
+  }
