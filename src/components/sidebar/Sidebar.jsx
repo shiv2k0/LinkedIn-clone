@@ -19,15 +19,15 @@ const Sidebar =()=>{
       <div>
         <img
           src={
-            user.photoURL ||
+            user?.photoURL ||
             `https://cdn-icons-png.flaticon.com/128/847/847969.png`
           }
           alt="Profile Photo"
           className="sidebar__top_profilePic"
         />
       </div>
-      <h3>{user.displayName}</h3>
-      <h4>{user.email}</h4>
+      <h3>{user?.displayName}</h3>
+      <h4>{user?.email}</h4>
     </div>
     <div className="sidebar__stats">
       <div className="sidebar__stat">

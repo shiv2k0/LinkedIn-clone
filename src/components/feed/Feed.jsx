@@ -22,7 +22,7 @@ const Feed = () =>{
       <div className="feed__input">
         <img
           src={
-            user.photoURL || 
+            user?.photoURL || 
             `https://cdn-icons-png.flaticon.com/128/847/847969.png`
           }
           alt=""

@@ -42,7 +42,7 @@ const Header = () =>{
       <HeaderOptions Icon={IoMdNotifications} title="Notification" />
       <HeaderOptions
         avatar={
-          user.photoURL ||
+          user?.photoURL ||
           `https://cdn-icons-png.flaticon.com/128/847/847969.png`
         }
         title="Me"
