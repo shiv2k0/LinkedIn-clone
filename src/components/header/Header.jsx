@@ -5,9 +5,23 @@ import { MdPeopleAlt, MdBusinessCenter } from "react-icons/md";
 import { BiSearch } from "react-icons/bi";
 import { RiMessage2Fill } from "react-icons/ri";
 import { IoMdNotifications } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../../features/user/userSlice";
+import { auth } from "../../firebase.config";
+import { useNavigate } from "react-router-dom";
 
 
 const Header = () =>{
+  const user = useSelector(selectUser)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleSignout=()=>{
+    dispatch(logout())
+    auth.signOut()
+    navigate("/login")
+    
+  }
+
     return <div className="header">
     <div className="header__left">
       <img
@@ -28,9 +42,11 @@ const Header = () =>{
       <HeaderOptions Icon={IoMdNotifications} title="Notification" />
       <HeaderOptions
         avatar={
+          user.photoURL ||
           `https://cdn-icons-png.flaticon.com/128/847/847969.png`
         }
         title="Me"
+        onClick={handleSignout}
       />
       <HeaderOptions />
     </div>

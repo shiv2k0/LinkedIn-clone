@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import "./sidebar.css"
+import { selectUser } from "../../features/user/userSlice";
 
 const Sidebar =()=>{
+    const user = useSelector(selectUser)
     const recentItem = (topic) => (
         <div className="sidebar__recentItem">
           <span className="sidebar__hash">#</span>
@@ -10,21 +13,21 @@ const Sidebar =()=>{
     return <div className="sidebar">
     <div className="sidebar__top">
       <img
-        src="https://cdn.pixabay.com/photo/2012/02/23/14/46/high-16250_640.jpg"
+        src={`https://cdn.pixabay.com/photo/2012/02/23/14/46/high-16250_640.jpg`}
         alt=""
       />
       <div>
         <img
           src={
-            // user.photoUrl ||
+            user.photoURL ||
             `https://cdn-icons-png.flaticon.com/128/847/847969.png`
           }
           alt="Profile Photo"
           className="sidebar__top_profilePic"
         />
       </div>
-      <h3>User Name</h3>
-      <h4>user@gmail.com</h4>
+      <h3>{user.displayName}</h3>
+      <h4>{user.email}</h4>
     </div>
     <div className="sidebar__stats">
       <div className="sidebar__stat">

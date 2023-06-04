@@ -2,6 +2,8 @@ import { useState } from "react"
 import "./feed.css"
 import Post from "../post/Post";
 import FlipMove from "react-flip-move";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/user/userSlice";
 
 const FeedOption = ({ icon, title }) => {
     return (
@@ -14,11 +16,13 @@ const FeedOption = ({ icon, title }) => {
 
 const Feed = () =>{
     const [input,setInput] = useState("")
+    const user = useSelector(selectUser)
     return <div className="feed">
     <div className="feed__inputContainer">
       <div className="feed__input">
         <img
           src={
+            user.photoURL || 
             `https://cdn-icons-png.flaticon.com/128/847/847969.png`
           }
           alt=""
