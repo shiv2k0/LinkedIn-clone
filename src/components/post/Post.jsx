@@ -19,6 +19,7 @@ const Post = forwardRef(({ name, description, message, imageUrl }, ref) => {
       <div className="post__header">
         <img
           src={
+            imageUrl ||
             `https://cdn-icons-png.flaticon.com/128/847/847969.png`
           }
           alt=""
